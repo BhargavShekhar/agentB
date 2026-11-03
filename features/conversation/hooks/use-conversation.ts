@@ -7,7 +7,7 @@ import {
     deleteConversation,
     listConversations,
     updateCoversation
-} from "../action/conversation-action";
+} from "../actions/conversation-action";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
