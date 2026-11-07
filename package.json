@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "db:migrate": "bun --bun run prisma migrate dev",
+    "db": "bunx prisma generate && bunx prisma migrate dev",
     "lint": "eslint"
   },
   "dependencies": {
