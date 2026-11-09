@@ -2,6 +2,7 @@ import { Suspense } from "react";
 
 import { onBoard } from '@/features/auth/action/onboard';
 import { auth } from '@clerk/nextjs/server';
+import ChatShell from "@/features/conversation/components/chat-shell";
 
 async function AuthGate({ children }: { children: React.ReactNode }) {
     await auth.protect();
@@ -18,7 +19,9 @@ const RootGroupLayout = async ({ children }: {
         <div>
             <Suspense fallback={null}>
                 <AuthGate>
-                    {children}
+                    <ChatShell>
+                        {children}
+                    </ChatShell>
                 </AuthGate>
             </Suspense>
         </div>

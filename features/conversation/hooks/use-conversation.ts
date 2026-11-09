@@ -39,7 +39,7 @@ export function useCreateConversation() {
 }
 
 /** Delete the conversation and leave the page if you are viewing it */
-export function useDeleteConversation(activeId: string) {
+export function useDeleteConversation(activeId: string | undefined) {
     const queryClient = useQueryClient();
     const router = useRouter();
 
