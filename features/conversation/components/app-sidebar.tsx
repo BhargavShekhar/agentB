@@ -42,6 +42,7 @@ import {
   useUpdateConversation,
 } from "@/features/conversation/hooks/use-conversation";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type Conversation = NonNullable<
   ReturnType<typeof useConversation>["data"]
@@ -51,10 +52,10 @@ export default function AppSidebar() {
   const pathname = usePathname();
   const { data: conversations, isLoading } = useConversation();
 
-  
-// Get the active conversation id from the pathname (e.g. /c/123)
-// pathname.split("/")[2] is the third part of the pathname (the conversation id)
-//  firstparam = / , secondparam = c , thirdparam = 123
+
+  // Get the active conversation id from the pathname (e.g. /c/123)
+  // pathname.split("/")[2] is the third part of the pathname (the conversation id)
+  //  firstparam = / , secondparam = c , thirdparam = 123
   const activeId = pathname.startsWith("/c/")
     ? pathname.split("/")[2]
     : undefined;
@@ -70,7 +71,12 @@ export default function AppSidebar() {
               render={<Link href="/" />}
             >
               <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-sm text-primary-foreground">
-                C
+                <Image
+                  src={"/logo.png"}
+                  alt="AgentB"
+                  width={100}
+                  height={100}
+                />
               </span>
               <span>AgentB</span>
             </SidebarMenuButton>

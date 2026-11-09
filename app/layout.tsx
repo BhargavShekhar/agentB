@@ -23,6 +23,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Agent",
   description: "New Generation Agent for orchestrating different kind of work",
+  icons: {
+    icon: '/logo.png',
+    apple: '/apple-logo.png',
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
